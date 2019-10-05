@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Object Constructors</h2>
+
+<p id="demo"></p>
+
+<script>
+// Constructor function for Student objects
+function Student(Name, age, Semester) {
+  this.firstName = Name;
+  
+  this.age = age;
+  this.semester = Semester;
+
+}
+
+// Create a Student object
+var std1 = new Student("samiya", 50, "8th semester");
+var std2 = new Student("sundas", 50, "8th semester");
+var std3 = new Student("shakeela", 50, "8th semester");
+
+
+
+// adding property name
+Student.prototype.Program = 'BS'
+
+
+
+// object with valued store into an array
+
+var arrays = [std1, std2, std3];
+var arrayLength = arrays.length;
+
+
+// function and display all value
+
+function displays()
+{
+	for(i=0; i< arrayLength; i++) {
+       
+            document.getElementById("demo").innerHTML += Object.values(arrays[i])+"<br>";
+
+        
+    }
+}
+
+// display all string value
+displays();
+
+
+
+
+
+function displayUserSearch() {
+    var userInput = prompt('Enter the property related to Student');
+
+    for(i=0; i< arrayLength; i++) {
+
+    	if(Object.values(arrays[i])==userInput)
+    	{
+    		document.getElementById("demo").innerHTML += userInput;
+    		
+    	}
+
+    	
+        
+    }
+}
+displayUserSearch()
+
+
+
+</script>
+
+</body>
+</html>
